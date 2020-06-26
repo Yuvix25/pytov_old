@@ -15,5 +15,5 @@ Run the setup.bat file.
 * python 3
 
 ## How to use
-To run files, **after running setup.bat (see Get Started)**, simply type in the command line `$ pytov path_to_file`.
-If you want to save the compiled python file use (`$ pytov path_to_file -py`).
+To run files, **after running setup.bat (see Get Started)**, simply run in the command line `$ pytov path_to_file`.
+If you want to also save the compiled python file use (`$ pytov path_to_file -py`).
