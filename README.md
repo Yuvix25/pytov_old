@@ -8,8 +8,8 @@ Run the setup.bat file.
 * Curly braces
 * No identation errors
 * Long and short comments (`/**/`, `//`)
+* Switch statement
 * Compiles to python
-* Switch
 
 ## Requirements
 * python 3
