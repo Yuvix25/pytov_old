@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pytov
-Version: 0.1.4
+Version: 0.1.5
 Summary: Write python with C like syntax
 Home-page: https://github.com/Yuvix25/pytov
 Author: Yuval Rosen
@@ -20,7 +20,7 @@ Description: # pytov
         * python 3
         
         ## How to use
-        To run files, simply run in the command line `$ pytov path_to_file`.
+        First, run `$ pip install pytov`, and then, to run files, simply run in the command line `$ pytov path_to_file`.
         If you want to also save the compiled python file use (`$ pytov path_to_file -py`).
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
