@@ -18,7 +18,7 @@ def hello(){
 }
 
 
-dict = {"hello":1}
+dict = {"hello":1};
 
 /*
 this will not be an error

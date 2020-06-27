@@ -1,9 +1,9 @@
 import setuptools
-
+print(setuptools.find_packages())
 
 setuptools.setup(
-    name="pytov", # Replace with your own username
-    version="0.0.6",
+    name="pytov",
+    version="0.1.4",
     license='MIT',
     author="Yuval Rosen",
     author_email="yuv.rosen@gmail.com",

@@ -205,7 +205,8 @@ class Main:
         except:
             #print(e)
             excep = traceback.format_exc()
-            lineNum = int(excep.split("\n")[3][excep.split("\n")[3].find("line") + 5:]) - 3
+            excepLine = excep.split("\n")[3][excep.split("\n")[3].find("line") + 5:]
+            lineNum = int(excepLine) - 3
             withoutThisFile = excep.split("\n")[0] + "\n" + "\n" + excep.split("\n")[3][:excep.split("\n")[3].find("line") + 5] + str(lineNum) + "\n" + "\n".join(excep.split("\n")[4:])
             print("\n" + withoutThisFile.replace('"<string>"', self.filePath))
         
@@ -214,18 +215,18 @@ def run():
     if len(sys.argv) > 1 and sys.argv[1] != "-py":
         main = Main(sys.argv[1])
         if "-py" in sys.argv:
-            if not os.path.isdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python'):
-                os.mkdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python')
-            o = open('\\'.join(sys.argv[1].split("\\")[:-1]) + "\\python\\" + sys.argv[1].split("\\")[-1].split(".")[0] + ".py", "w")
+            if not os.path.isdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled'):
+                os.mkdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled')
+            o = open('\\'.join(sys.argv[1].split("\\")[:-1]) + "\\python-compiled\\" + sys.argv[1].split("\\")[-1], "w")
             o.write(main.connected)
             o.close()
     else:
         print("======================= no file entered, running example =======================\n")
-        main = Main(f"{os.path.dirname(os.path.abspath(__file__))}\\examples\\curly.pt")
+        main = Main(f"{os.path.dirname(os.path.abspath(__file__))}\\examples\\curly.py")
         if "-py" in sys.argv:
-            if not os.path.isdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python'):
-                os.mkdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python')
-            o = open(os.path.dirname(os.path.abspath(__file__)) + "\\examples\\python\\curly.py", "w")
+            if not os.path.isdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python-compiled'):
+                os.mkdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python-compiled')
+            o = open(os.path.dirname(os.path.abspath(__file__)) + "\\examples\\python-compiled\\curly.py", "w")
             o.write(main.connected)
             o.close()
 

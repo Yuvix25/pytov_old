@@ -10,3 +10,5 @@ pytov.egg-info/dependency_links.txt
 pytov.egg-info/entry_points.txt
 pytov.egg-info/requires.txt
 pytov.egg-info/top_level.txt
+pytov/examples/__init__.py
+pytov/examples/curly.py

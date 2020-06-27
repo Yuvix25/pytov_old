@@ -1,1 +1,2 @@
-import pytov.pytov as pytov
+from pytov.pytov import Main
+from pytov import pytov
