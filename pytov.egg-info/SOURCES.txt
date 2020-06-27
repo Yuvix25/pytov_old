@@ -1,0 +1,11 @@
+README.txt
+setup.cfg
+setup.py
+pytov/__init__.py
+pytov/curly_braces.py
+pytov/pytov.py
+pytov.egg-info/PKG-INFO
+pytov.egg-info/SOURCES.txt
+pytov.egg-info/dependency_links.txt
+pytov.egg-info/requires.txt
+pytov.egg-info/top_level.txt

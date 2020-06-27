@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: pytov
+Version: 0.2
+Summary: Write python with C like syntax
+Home-page: https://github.com/Yuvix25/pytov
+Author: Yuval Rosen
+Author-email: yuv.rosen@gmail.com
+License: MIT
+Description: # pytov
+        Python but tov (good).
+        
+        ## Getting Started
+        Run the setup.bat file.
+        
+        ## Features
+        * Curly braces
+        * No identation errors
+        * Long and short comments (`/**/`, `//`)
+        * Switch statement
+        * Compiles to python
+        
+        ## Requirements
+        * python 3
+        
+        ## How to use
+        To run files, **after running setup.bat (see Get Started)**, simply run in the command line `$ pytov path_to_file`.
+        If you want to also save the compiled python file use (`$ pytov path_to_file -py`).
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
