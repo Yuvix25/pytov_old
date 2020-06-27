@@ -2,7 +2,7 @@ import re
 import importlib
 import os
 import sys
-import curly_braces
+import pytov.curly_braces as curly_braces
 import traceback
 
 class Main:
