@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pytov
-Version: 0.2
+Version: 0.0.6
 Summary: Write python with C like syntax
 Home-page: https://github.com/Yuvix25/pytov
 Author: Yuval Rosen

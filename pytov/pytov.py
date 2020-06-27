@@ -210,7 +210,7 @@ class Main:
             print("\n" + withoutThisFile.replace('"<string>"', self.filePath))
         
 
-if __name__ == "__main__":
+def run():
     if len(sys.argv) > 1 and sys.argv[1] != "-py":
         main = Main(sys.argv[1])
         if "-py" in sys.argv:
@@ -228,3 +228,6 @@ if __name__ == "__main__":
             o = open(os.path.dirname(os.path.abspath(__file__)) + "\\examples\\python\\curly.py", "w")
             o.write(main.connected)
             o.close()
+
+if __name__ == "__main__":
+    run()

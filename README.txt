@@ -1,9 +1,6 @@
 # pytov
 Python but tov (good).
 
-## Getting Started
-Run the setup.bat file.
-
 ## Features
 * Curly braces
 * No identation errors
