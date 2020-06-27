@@ -12,5 +12,5 @@ Python but tov (good).
 * python 3
 
 ## How to use
-To run files, **after running setup.bat (see Get Started)**, simply run in the command line `$ pytov path_to_file`.
+To run files, simply run in the command line `$ pytov path_to_file`.
 If you want to also save the compiled python file use (`$ pytov path_to_file -py`).
