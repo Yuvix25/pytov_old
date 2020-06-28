@@ -103,7 +103,7 @@ elif not True:
     pass
 ```
 you can now use:
-```c#
+```python
 if True && False{
     pass
 }
