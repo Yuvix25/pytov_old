@@ -1,5 +1,4 @@
 import re
-import importlib
 import os
 import sys
 import pytov.curly_braces as curly_braces

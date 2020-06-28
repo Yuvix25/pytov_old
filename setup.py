@@ -3,7 +3,7 @@ print(setuptools.find_packages())
 
 setuptools.setup(
     name="pytov",
-    version="0.1.5",
+    version="0.1.6",
     license='MIT',
     author="Yuval Rosen",
     author_email="yuv.rosen@gmail.com",
@@ -18,9 +18,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    install_requires=[            # I get to this in a second
-          'importlib'
-      ],
+    install_requires=[],
 
     entry_points={
         'console_scripts': [
