@@ -1,3 +1,0 @@
-[console_scripts]
-pytov = pytov.pytov:run
-
