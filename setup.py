@@ -3,7 +3,7 @@ print(setuptools.find_packages())
 
 setuptools.setup(
     name="pytov",
-    version="0.1.6",
+    version="0.1.7",
     license='MIT',
     author="Yuval Rosen",
     author_email="yuv.rosen@gmail.com",
