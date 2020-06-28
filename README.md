@@ -62,7 +62,7 @@ switch("hii", {
 
 The sample above shows use of pytov syntax.
 
-Just like C, use curly braces instead of colons, and there are no more identation errors.
+Just like C, use curly braces instead of colons (they will not work), and there are no more identation errors.
 ```c#
 def test(){
         print("no identation errors")
@@ -103,11 +103,14 @@ elif not True:
     pass
 ```
 you can now use:
-```c# python
-if True && False:
+```c#
+if True && False{
     pass
-elif True || False:
+}
+elif True || False{
     pass
-elif !True:
+}
+elif !True{
     pass
+}
 ```

@@ -110,7 +110,7 @@ class Main:
             #     arrow = " " * len(self.splitted[i]) + "^"
             #     raise SyntaxError(f"excepted ';' at end of line {i + 1}\n{self.splitted[i]}\n{arrow}")
 
-            self.splitted[i] = "".join(["\t" for u in range(pastCurlies)]) + withoutTabs
+            self.splitted[i] = "".join(["    " for u in range(pastCurlies)]) + withoutTabs
             
             # add new (correct) identation
 
