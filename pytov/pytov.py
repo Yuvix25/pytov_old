@@ -195,6 +195,7 @@ class Main:
         self.connected = self.replaceOutsideString(self.connected, "&&", " and ")
         self.connected = self.replaceOutsideString(self.connected, "!", " not ", "=")
         self.connected = self.replaceOutsideString(self.connected, "//", "#")
+        self.connected = self.replaceOutsideString(self.connected, "/_", "//")
         self.connected = self.replaceOutsideString(self.connected, "catch", "except")
         self.connected = self.replaceOutsideString(self.connected, ";", "")
 

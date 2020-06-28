@@ -22,7 +22,7 @@ dict = {"hello":1};
 
 /*
 this will not be an error
-
+multi line
 */
 
 //this one too

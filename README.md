@@ -82,13 +82,17 @@ if (1 == 1){
 switch is a selection statement that chooses a single switch section to execute from a list of cases.
 
 
-### Multiline comments
+### Comments
+
+Multiline:
 ```c#
 /*
 use this syntax if you want the text to be commented out
 and yes, it works on multiple lines.
 */
-
+```
+Single line
+```c#
 // you can also write single line comments like this
 ```
 
