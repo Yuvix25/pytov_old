@@ -47,12 +47,12 @@ dict = {"hello":1};
 
 /*
 this will not be an error
-
+multi line
 */
 
 //this one too
 
-
+print(1 /_ 3) // floor division
 
 switch("hii", {
     "hello":
