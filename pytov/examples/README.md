@@ -1,6 +1,7 @@
 # Examples
 
-## Here you can run the examples above:
+## [Run examples online](https://repl.it/@yuvix/example#main.py)
 
-## **<span>curly.py</span>**
-<iframe height="400px" width="100%" src="https://repl.it/@yuvix/example?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+## <span>curly.py</span>
+
+The <span>curly.py</span> example, shows all the current functionality of pytov.

@@ -3,3 +3,4 @@ __pycache__/
 pytov.egg-info/
 docs/
 /README.txt
+setup.cfg
