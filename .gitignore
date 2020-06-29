@@ -2,3 +2,4 @@ dist/
 __pycache__/
 pytov.egg-info/
 docs/
+/README.txt
