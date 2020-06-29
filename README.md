@@ -2,6 +2,10 @@
 # pytov
 Python but tov (good).
 
+[Full documentations](https://pytov-documentations.readthedocs.io/en/latest/)
+
+---
+
 ## Features
 * Curly braces
 * No identation errors
@@ -120,5 +124,6 @@ elif !True{
 ```
 
 ---
-
 [Full documentations](https://pytov-documentations.readthedocs.io/en/latest/)
+
+---
