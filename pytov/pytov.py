@@ -25,11 +25,12 @@ class Main:
         strings = []
         wasQuoteStart = False
         lastQuote = ""
+        previusChar = ""
         firstQuote = 0
 
         for i in range(len(text)):
             
-            if (text[i] == "'" and wasQuoteStart and lastQuote == "'") or (text[i] == '"' and wasQuoteStart and lastQuote == '"'):
+            if (text[i] == "'" and wasQuoteStart and lastQuote == "'") or (text[i] == '"' and wasQuoteStart and lastQuote == '"') and previusChar != "\\":
                 strings.append([firstQuote, i])
                 wasQuoteStart = False
 
@@ -37,6 +38,8 @@ class Main:
                 lastQuote = text[i]
                 wasQuoteStart = True
                 firstQuote = i
+            
+            previusChar = text[i]
         
         return strings
     
@@ -145,10 +148,9 @@ class Main:
         while True:
             # get all matches of rep outside double quotes
             finds = []
-
             matches = re.finditer(r"(" + rep + r")(?=(?:[^\"]|\"[^\"]*\")*$)(?=(?:[^\']|\'[^\']*\')*$)", text)
             for _, match in enumerate(matches, start=1):
-                 finds.append([match.start(), match.end()])
+                finds.append([match.start(), match.end()])
 
             
             #break if nothing found
@@ -157,7 +159,7 @@ class Main:
             
             unlesses = []
 
-            # check if unless is set, and if so replace it with the rwith.
+            # check if unless is not set, and if so replace with the rwith.
             if (unless == False):
                 text = text[:finds[-1][0]] + rwith + text[finds[-1][1]:]
             
@@ -183,14 +185,17 @@ class Main:
         self.addTabs()
         # connect splitted lines and add referance to switch
         self.connected = "import pytov\nmain = pytov.Main()\nswitch = main.switch\n" + "\n".join(self.splitted)
-        #remove long comments
+        # replace \" and \' with flags
+        self.connected = self.connected.replace("\\\"", "~^$backslash$-$double$-$quote$-$flag$^~")
+        self.connected = self.connected.replace("\\\'", "~^$backslash$-$single$-$quote$-$flag$^~")
+        # remove long comments
         self.connected = self.removeLongComments(self.connected)
         self.connected = self.replaceOutsideString(self.connected, "\/\*\*\/", "")
         # replace keywords
         self.connected = self.replaceOutsideString(self.connected, "\{", ":")
         self.connected = self.replaceOutsideString(self.connected, "\}", "")
-        self.connected = self.replaceOutsideString(self.connected, "~`~", "}")
-        self.connected = self.replaceOutsideString(self.connected, "`~`", "{")
+        self.connected = self.connected.replace("~^$curly$-$braces$-$end$-$flag$^~", "}")
+        self.connected = self.connected.replace("~^$curly$-$braces$-$start$-$flag$^~", "{")
         self.connected = self.replaceOutsideString(self.connected, "\|\|", " or ")
         self.connected = self.replaceOutsideString(self.connected, "&&", " and ")
         self.connected = self.replaceOutsideString(self.connected, "!", " not ", "=")
@@ -198,6 +203,10 @@ class Main:
         self.connected = self.replaceOutsideString(self.connected, "/_", "//")
         self.connected = self.replaceOutsideString(self.connected, "catch", "except")
         self.connected = self.replaceOutsideString(self.connected, ";", "")
+
+        # replace flags back
+        self.connected = self.connected.replace("~^$backslash$-$double$-$quote$-$flag$^~", "\\\"")
+        self.connected = self.connected.replace("~^$backslash$-$single$-$quote$-$flag$^~", "\\\'")
 
         # execute final code
         try:

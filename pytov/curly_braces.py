@@ -13,10 +13,10 @@ def hide_curlys(text):
         if item == "=":
             hide_curly = True
         elif item == "{" and hide_curly and not isLambd:
-            text[index] = "`~`"
+            text[index] = "~^$curly$-$braces$-$start$-$flag$^~"
             balance += 1
         elif item == "}" and hide_curly and not isLambd:
-            text[index] = "~`~"
+            text[index] = "~^$curly$-$braces$-$end$-$flag$^~"
             balance -= 1
             if balance == 0 and not in_perns:
                 hide_curly = False

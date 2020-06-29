@@ -1,9 +1,8 @@
 import setuptools
-print(setuptools.find_packages())
 
 setuptools.setup(
     name="pytov",
-    version="0.2.0",
+    version="0.2.2",
     license='MIT',
     author="Yuval Rosen",
     author_email="yuv.rosen@gmail.com",
