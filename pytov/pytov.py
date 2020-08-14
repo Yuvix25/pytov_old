@@ -1,7 +1,12 @@
 import re
 import os
 import sys
-import pytov.curly_braces as curly_braces
+from pathlib import Path
+
+try:
+    import pytov.curly_braces as curly_braces
+except:
+    import curly_braces
 import traceback
 
 class Main:
@@ -10,7 +15,7 @@ class Main:
         # check if the filePath is on default mode (called by the reference to switch see run), and if not, compile and run.
         if (filePath != False):
             self.filePath = filePath
-            self.fileText = open(self.filePath, "r").read() + "\n"
+            self.fileText = open(self.filePath, "r").read() + "\n\n\"\""
             self.strings = []
             self.splitted = []
             self.splitFile()
@@ -184,7 +189,7 @@ class Main:
         # replace braces and fix identation
         self.addTabs()
         # connect splitted lines and add referance to switch
-        self.connected = "import pytov\nmain = pytov.Main()\nswitch = main.switch\n" + "\n".join(self.splitted)
+        self.connected = "import pytov\nswitch = pytov.Main().switch\n" + "\n".join(self.splitted)
         # replace \" and \' with flags
         self.connected = self.connected.replace("\\\"", "~^$backslash$-$double$-$quote$-$flag$^~")
         self.connected = self.connected.replace("\\\'", "~^$backslash$-$single$-$quote$-$flag$^~")
@@ -208,6 +213,7 @@ class Main:
         self.connected = self.connected.replace("~^$backslash$-$double$-$quote$-$flag$^~", "\\\"")
         self.connected = self.connected.replace("~^$backslash$-$single$-$quote$-$flag$^~", "\\\'")
 
+
         # execute final code
         try:
             exec(self.connected)
@@ -215,27 +221,31 @@ class Main:
             #print(e)
             excep = traceback.format_exc()
             excepLine = excep.split("\n")[3][excep.split("\n")[3].find("line") + 5:]
-            lineNum = int(excepLine) - 3
+            lineNum = int(excepLine) - 2
             withoutThisFile = excep.split("\n")[0] + "\n" + "\n" + excep.split("\n")[3][:excep.split("\n")[3].find("line") + 5] + str(lineNum) + "\n" + "\n".join(excep.split("\n")[4:])
             print("\n" + withoutThisFile.replace('"<string>"', self.filePath))
         
 
 def run():
     if len(sys.argv) > 1 and sys.argv[1] != "-py":
-        main = Main(sys.argv[1])
+        runnedfile = Path(sys.argv[1])
+        pythoncompiled = runnedfile.parents[0] / "python-compiled"
+        main = Main(runnedfile)
+
         if "-py" in sys.argv:
-            if not os.path.isdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled'):
-                os.mkdir('\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled')
-            o = open('\\'.join(sys.argv[1].split("\\")[:-1]) + "\\python-compiled\\" + sys.argv[1].split("\\")[-1], "w")
+            if not os.path.isdir(pythoncompiled): # '\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled'
+                os.mkdir(pythoncompiled)
+            o = open(pythoncompiled / runnedfile.name, "w")
             o.write(main.connected)
             o.close()
     else:
         print("======================= no file entered, running example =======================\n")
-        main = Main(f"{os.path.dirname(os.path.abspath(__file__))}\\examples\\curly.py")
+        dirname = Path(os.path.dirname(os.path.abspath(__file__))) / "examples"
+        main = Main(dirname / "curly.py") # f"{dirname}\\curly.py"
         if "-py" in sys.argv:
-            if not os.path.isdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python-compiled'):
-                os.mkdir(os.path.dirname(os.path.abspath(__file__)) + '\\examples\\python-compiled')
-            o = open(os.path.dirname(os.path.abspath(__file__)) + "\\examples\\python-compiled\\curly.py", "w")
+            if not os.path.isdir(dirname / "python-compiled"): # dirname + '\\python-compiled'
+                os.mkdir(dirname / "python-compiled") # dirname + '\\python-compiled'
+            o = open(dirname / "python-compiled" / "curly.py", "w") # dirname + "\\python-compiled\\curly.py", "w"
             o.write(main.connected)
             o.close()
 

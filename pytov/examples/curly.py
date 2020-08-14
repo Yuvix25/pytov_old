@@ -5,7 +5,7 @@ print("except");
 }
        }
 if (1!=2){
-    print("ihihih");
+    print("\'ihihih\'");
     print({"hi":1}["hi"]);
 }
 
