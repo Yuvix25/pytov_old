@@ -27,7 +27,7 @@ If you want to also save the compiled python file use (`$ pytov path_to_file -py
 ## Syntax
 ```c#
 if (1 && 1){
-                   print("i dont care about indetation");
+                   print("i dont care about indentation");
    if(1==1){
 print("except");
 }
@@ -45,10 +45,10 @@ def hello(){
     print("hello\"");
 }
 
-print(true || false) // you dont have to use capital T and F in true and false.
+print(true || false) // you don't have to use capital T and F in true and false.
 
 def indentation():
-    print("You dont have to use the braces, the regular indentation works too")
+    print("You don't have to use the braces, the regular indentation works too")
 
 
 anotherTest()
@@ -134,6 +134,6 @@ elif !True{
 ```
 
 ---
-[Full documentations](https://pytov-documentations.readthedocs.io/en/latest/)
+[Full documentation](https://pytov-documentations.readthedocs.io/en/latest/)
 
 ---
