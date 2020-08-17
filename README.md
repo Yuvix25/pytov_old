@@ -73,7 +73,7 @@ switch("hii", {
 
 The sample above shows use of pytov syntax.
 
-Just like C, use curly braces instead of colons (they will not work), and there are no more identation errors.
+Just like C, use curly braces instead of colons (but they still work too), and there are no more identation errors.
 ```c#
 def test(){
         print("no identation errors")
