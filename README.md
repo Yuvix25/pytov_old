@@ -76,7 +76,7 @@ switch("hii", {
 
 The sample above shows use of pytov syntax.
 
-Just like C, use curly braces instead of colons (but they still work too), and there are no more identation errors.
+Just like C, use curly braces instead of colons (but they still work too), and there are no more indentation errors.
 ```c#
 def test(){
         print("no identation errors")
@@ -90,7 +90,7 @@ if (1 == 1){
 ### Switch
 `switch(var, cases, *args)`
 * var - the value to switch on.
-* case - a dictionery of case that the var might be and their callbacks.
+* case - a dictionary of case that the var might be and their callbacks.
 * *args(optional) - default case.
 
 switch is a selection statement that chooses a single switch section to execute from a list of cases.
