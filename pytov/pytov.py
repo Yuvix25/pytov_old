@@ -223,6 +223,11 @@ class Main:
             #print(e)
             excep = traceback.format_exc()
             excepLine = excep.split("\n")[3][excep.split("\n")[3].find("line") + 5:]
+            for i in range(len(excepLine)):
+                try:
+                    int(excepLine[i])
+                except:
+                    excepLine = excepLine[:i]
             lineNum = int(excepLine) - 2
             withoutThisFile = excep.split("\n")[0] + "\n" + "\n" + excep.split("\n")[3][:excep.split("\n")[3].find("line") + 5] + str(lineNum) + "\n" + "\n".join(excep.split("\n")[4:])
             print("\n" + withoutThisFile.replace('"<string>"', str(self.filePath)))

@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="pytov",
-    version="0.2.4",
+    version="0.2.5",
     license='MIT',
     author="Yuval Rosen",
     author_email="yuv.rosen@gmail.com",

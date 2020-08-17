@@ -23,7 +23,7 @@ def indentation():
     print("You dont have to use the braces, the regular indentation works too")
 
 
-anotherTest()
+indentation()
 
 dict = {"hello":1};
 
