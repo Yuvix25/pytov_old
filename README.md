@@ -6,10 +6,11 @@ Python but tov (good).
 [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=Yuvix25.pytov-run)
 
 ## Features
-* Curly braces
-* No identation errors
+* Curly braces (not must)
+* No identation errors (if you use the curly braces)
 * Long and short comments (`/**/`, `//`)
 * Short boolean operators (`and` - `&&`, `or` - `||`, `not` - `!`)
+* Lower case true and false supported too
 * Switch statement
 * Compiles to python
 
@@ -29,7 +30,7 @@ print("except");
 }
        }
 if (1!=2){
-    print("ihihih");
+    print("\'ihihih\'");
     print({"hi":1}["hi"]);
 }
 
@@ -38,9 +39,16 @@ def hi(){
 }
 
 def hello(){
-    print("hello");
+    print("hello\"");
 }
 
+print(true || false) // you dont have to use capital T and F in true and false.
+
+def indentation():
+    print("You dont have to use the braces, the regular indentation works too")
+
+
+anotherTest()
 
 dict = {"hello":1};
 

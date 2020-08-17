@@ -208,6 +208,8 @@ class Main:
         self.connected = self.replaceOutsideString(self.connected, "/_", "//")
         self.connected = self.replaceOutsideString(self.connected, "catch", "except")
         self.connected = self.replaceOutsideString(self.connected, ";", "")
+        self.connected = self.replaceOutsideString(self.connected, "true", "True")
+        self.connected = self.replaceOutsideString(self.connected, "false", "False")
 
         # replace flags back
         self.connected = self.connected.replace("~^$backslash$-$double$-$quote$-$flag$^~", "\\\"")
@@ -223,7 +225,7 @@ class Main:
             excepLine = excep.split("\n")[3][excep.split("\n")[3].find("line") + 5:]
             lineNum = int(excepLine) - 2
             withoutThisFile = excep.split("\n")[0] + "\n" + "\n" + excep.split("\n")[3][:excep.split("\n")[3].find("line") + 5] + str(lineNum) + "\n" + "\n".join(excep.split("\n")[4:])
-            print("\n" + withoutThisFile.replace('"<string>"', self.filePath))
+            print("\n" + withoutThisFile.replace('"<string>"', str(self.filePath)))
         
 
 def run():
@@ -235,7 +237,7 @@ def run():
         if "-py" in sys.argv:
             if not os.path.isdir(pythoncompiled): # '\\'.join(sys.argv[1].split("\\")[:-1]) + '\\python-compiled'
                 os.mkdir(pythoncompiled)
-            o = open(pythoncompiled / runnedfile.name, "w")
+            o = open(pythoncompiled / (runnedfile.name + ".py"), "w")
             o.write(main.connected)
             o.close()
     else:

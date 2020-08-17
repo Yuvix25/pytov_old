@@ -9,7 +9,22 @@ def hide_curlys(text):
     isLambd = False
     lambdBalance = 0
     lambdFirst = False
+    indentation = 0
+    indentations = []
+    last_was_indentation = True
+    colon_balance = 0
+
+
     for index, item  in enumerate(text):
+
+        if last_was_indentation and (item == " " or item == "\t"):
+            indentation += 1
+        elif last_was_indentation and (item != " " and item != "\t"):
+            last_was_indentation = False
+        elif item == "\n":
+            indentation = 0
+            last_was_indentation = True
+
         if item == "=":
             hide_curly = True
         elif item == "{" and hide_curly and not isLambd:
@@ -20,6 +35,15 @@ def hide_curlys(text):
             balance -= 1
             if balance == 0 and not in_perns:
                 hide_curly = False
+
+        elif item == ":" and ((not hide_curly) or isLambd):
+            text[index] = "{"
+            colon_balance += 1
+            indentations.append(indentation)
+
+        if colon_balance > 0 and len(indentations) > 0 and indentations[-1] >= indentation and ((index < len(text) - 1 and text[index + 1] == "\n") or index == len(text) - 1) and text[index - 1] != "{" and ((not hide_curly) or isLambd) and item != ":":
+            text[index] = item + "}"
+            colon_balance -= 1
 
         if item == "(":
             hide_curly = True
