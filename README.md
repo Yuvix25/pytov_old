@@ -1,9 +1,12 @@
 [comment]: <> (README for github)
-# pytov
+# pytov [![Documentation Status](https://readthedocs.org/projects/pytov-documentations/badge/?version=latest)](https://pytov-documentations.readthedocs.io/en/latest/?badge=latest)
+
+
 Python but tov (good).  
+
 [Examples](https://github.com/Yuvix25/pytov/tree/master/pytov/examples)  
-[Full documentations](https://pytov-documentations.readthedocs.io/en/latest/)  
 [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=Yuvix25.pytov-run)
+
 
 ## Features
 * Curly braces (not must)
