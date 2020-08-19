@@ -135,10 +135,6 @@ elif !True{
 ```
 
 ---
-<<<<<<< HEAD
 [Full documentation](https://docs.pytov.ml)
-=======
-[Full documentation](https://pytov-documentations.readthedocs.io/en/latest/)
->>>>>>> c2568fdbe0415872456fd6f988a98aa86c2bffe0
 
 ---
