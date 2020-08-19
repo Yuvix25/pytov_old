@@ -121,16 +121,16 @@ elif True or False:
 elif not True:
     pass
 ```
-you can now use:
-```python
-if True && False{
-    pass
+you can now use (pass no required):
+```c#
+if true && false{
+    
 }
-elif True || False{
-    pass
+elif true || false{
+    
 }
-elif !True{
-    pass
+elif !true{
+    
 }
 ```
 
