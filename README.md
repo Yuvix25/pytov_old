@@ -5,8 +5,8 @@
 Python but tov (good).  
 
 [Examples](https://github.com/Yuvix25/pytov/tree/master/pytov/examples)  
-[Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=Yuvix25.pytov-run)
-
+[Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=Yuvix25.pytov-run)  
+[pypi](https://pypi.org/project/pytov/)
 
 ## Features
 * Curly braces (not must)
