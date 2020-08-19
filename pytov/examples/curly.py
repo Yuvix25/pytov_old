@@ -22,6 +22,9 @@ print(true || false) // you dont have to use capital T and F in true and false.
 def indentation():
     print("You dont have to use the braces, the regular indentation works too")
 
+
+if (True){}
+
 indentation()
 
 dict = {"hello":1};

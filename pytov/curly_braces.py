@@ -35,6 +35,8 @@ def hide_curlys(text):
             balance -= 1
             if balance == 0 and not in_perns:
                 hide_curly = False
+        elif item == "}" and not (hide_curly and isLambd):
+            text[index] = "pass\n}"
 
         elif item == ":" and ((not hide_curly) or isLambd):
             text[index] = "{"

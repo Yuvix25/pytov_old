@@ -1,5 +1,5 @@
 [comment]: <> (README for github)
-# pytov [![Documentation Status](https://readthedocs.org/projects/pytov-documentations/badge/?version=latest)](https://pytov-documentations.readthedocs.io/en/latest/?badge=latest)
+# pytov [![Documentation Status](https://readthedocs.org/projects/pytov-documentations/badge/?version=latest)](https://docs.pytov.ml/en/latest/?badge=latest)
 
 
 Python but tov (good).  
@@ -11,6 +11,7 @@ Python but tov (good).
 ## Features
 * Curly braces (not must)
 * No identation errors (if you use the curly braces)
+* func or function instead of def
 * Long and short comments (`/**/`, `//`)
 * Short boolean operators (`and` - `&&`, `or` - `||`, `not` - `!`)
 * Lower case true and false supported too
@@ -27,7 +28,7 @@ If you want to also save the compiled python file use (`$ pytov path_to_file -py
 ## Syntax
 ```c#
 if (1 && 1){
-                   print("i dont care about indetation");
+                   print("i dont care about indentation");
    if(1==1){
 print("except");
 }
@@ -45,10 +46,10 @@ def hello(){
     print("hello\"");
 }
 
-print(true || false) // you dont have to use capital T and F in true and false.
+print(true || false) // you don't have to use capital T and F in true and false.
 
 def indentation():
-    print("You dont have to use the braces, the regular indentation works too")
+    print("You don't have to use the braces, the regular indentation works too")
 
 
 anotherTest()
@@ -76,7 +77,7 @@ switch("hii", {
 
 The sample above shows use of pytov syntax.
 
-Just like C, use curly braces instead of colons (but they still work too), and there are no more identation errors.
+Just like C, use curly braces instead of colons (but they still work too), and there are no more indentation errors.
 ```c#
 def test(){
         print("no identation errors")
@@ -90,7 +91,7 @@ if (1 == 1){
 ### Switch
 `switch(var, cases, *args)`
 * var - the value to switch on.
-* case - a dictionery of case that the var might be and their callbacks.
+* case - a dictionary of case that the var might be and their callbacks.
 * *args(optional) - default case.
 
 switch is a selection statement that chooses a single switch section to execute from a list of cases.
@@ -134,6 +135,6 @@ elif !True{
 ```
 
 ---
-[Full documentations](https://pytov-documentations.readthedocs.io/en/latest/)
+[Full documentation](https://docs.pytov.ml)
 
 ---

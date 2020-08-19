@@ -210,6 +210,8 @@ class Main:
         self.connected = self.replaceOutsideString(self.connected, ";", "")
         self.connected = self.replaceOutsideString(self.connected, "true", "True")
         self.connected = self.replaceOutsideString(self.connected, "false", "False")
+        self.connected = self.replaceOutsideString(self.connected, "func", "def")
+        self.connected = self.replaceOutsideString(self.connected, "function", "def")
 
         # replace flags back
         self.connected = self.connected.replace("~^$backslash$-$double$-$quote$-$flag$^~", "\\\"")
